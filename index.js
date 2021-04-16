@@ -3,6 +3,8 @@ import { writeFileSync } from "fs";
 
 import { basicAuth } from "./auth.js";
 
+const PORT = process.env.NODE_ENV === "production" ? 80 : 7777;
+
 const app = express();
 
 const customBodyAuth = basicAuth({
@@ -31,7 +33,7 @@ app.post("/update", customBodyAuth, function (req, res) {
   res.status(200).send("Site updated");
 });
 
-app.listen(7777, function () {
+app.listen(PORT, function () {
   console.log("Listening!");
 });
 
