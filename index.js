@@ -31,7 +31,7 @@ app.post("/update", customBodyAuth, function (req, res) {
   res.status(200).send("Site updated");
 });
 
-app.listen(8080, function () {
+app.listen(7777, function () {
   console.log("Listening!");
 });
 
